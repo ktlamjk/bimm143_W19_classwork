@@ -47,5 +47,11 @@ write.pdb(lig, file="1hsg_ligand.pdb")
 ```
 
 
+## Read in autodoc result
+
+```{r}
+res <- read.pdb("all.pdbqt", multi=TRUE)
+write.pdb(res, "result.pdb")
+```
 
 
