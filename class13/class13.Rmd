@@ -1,0 +1,51 @@
+---
+title: "class13"
+author: "Katie Lam"
+date: "2/19/2019"
+output: git_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Prepare HIV-protease molecule for docking
+
+First get a PDB structure from the online database then clean it up for docking
+
+```{r}
+library(bio3d)
+```
+
+```{r}
+file.name <- get.pdb("1hsg")
+file.name
+```
+
+Read file into R and clean it up (remove non-protein bits) and also we will save the ligand into a separate file
+
+```{r}
+hiv <- read.pdb(file.name)
+hiv
+```
+
+```{r}
+prot <- trim.pdb(hiv, "protein")
+prot
+```
+
+```{r}
+write.pdb(prot, file="1hsg_protein.pdb")
+```
+
+Do the same for ligand
+
+```{r}
+lig <- trim.pdb(hiv,"ligand")
+lig
+write.pdb(lig, file="1hsg_ligand.pdb")
+```
+
+
+
+
