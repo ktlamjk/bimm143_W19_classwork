@@ -44,9 +44,9 @@ Q. Does the first sequence hasve good quality?
 
 ```{r}
 q <- "DDDDCDEDCDDDDBBDDDCC@"
-install.packages("seqinr")
+install.packages("seqinr", repos = "http://cran.us.r-project.org")
 library(seqinr)
-install.packages("gtools")
+install.packages("gtools", repos = "http://cran.us.r-project.org")
 library(gtools)
 asc(s2c(q)) -33
 ```
